@@ -1,0 +1,27 @@
+{
+  "name": "plataforma_de_eventos-backend2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicolas8642-pixel/Plataforma_de_eventos-Backend2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/nicolas8642-pixel/Plataforma_de_eventos-Backend2/issues"
+  },
+  "homepage": "https://github.com/nicolas8642-pixel/Plataforma_de_eventos-Backend2#readme",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mongoose": "^9.9.4"
+  }
+}
