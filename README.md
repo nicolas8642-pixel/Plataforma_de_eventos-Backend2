@@ -36,6 +36,16 @@ Variables disponibles:
 | `MONGO_URL`   | Cadena de conexión a MongoDB (aún sin uso)    |
 | `JWT_SECRET`  | Clave para firmar tokens JWT (aún sin uso)    |
 
+## Base de datos
+
+Este proyecto requiere una instancia de MongoDB corriendo. Para levantarla localmente:
+
+\`\`\`bash
+mongod --dbpath C:\data\db
+\`\`\`
+
+Asegurate de tener creada la carpeta de datos (`C:\data\db` o la que definas) y de que la URL en tu `.env` coincida con el puerto en el que corre MongoDB (por defecto, `27017`).
+
 ## Cómo ejecutar
 
 \`\`\`bash
@@ -71,3 +81,31 @@ src/
 
 ## Estado del proyecto
 
+
+## Probar el registro de usuarios
+
+Endpoint: `POST /api/sessions/register`
+
+Campos esperados en el body (JSON):
+
+| Campo        | Tipo   | Obligatorio |
+|--------------|--------|-------------|
+| `first_name` | string | Sí          |
+| `last_name`  | string | Sí          |
+| `email`      | string | Sí          |
+| `password`   | string | Sí (mínimo 8 caracteres) |
+
+Ejemplo de request:
+
+\`\`\`json
+{
+  "first_name": "Ana",
+  "last_name": "Perez",
+  "email": "ana@mail.com",
+  "password": "secreta123"
+}
+\`\`\`
+
+Respuesta exitosa (`201`): devuelve el usuario creado, sin incluir la contraseña.
+
+Posibles errores: `400` (campos faltantes o formato inválido) y `409` (email ya registrado).
