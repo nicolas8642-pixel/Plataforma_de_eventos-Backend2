@@ -1,11 +1,11 @@
 export const getSessions = (req, res) => {
-    
-    res.status(200).json({status: 'success', payload: []});
-
+  const sessions = getSessionsPlaceholder();
+  res.status(200).json({ status: "success", payload: sessions });
 };
 
 
 import { registerUser } from "../services/sessions.service.js";
+import { registerUser, getSessionsPlaceholder } from "../services/sessions.service.js";
 
 export const register = async (req, res) => {
   try {
